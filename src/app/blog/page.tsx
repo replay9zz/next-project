@@ -1,4 +1,4 @@
-// src/app/page.tsx
+// src/app/blog/page.tsx
 'use client';
 
 import React, { useState } from 'react';
@@ -6,7 +6,7 @@ import RegularTetrahedron from '@/components/RegularTetrahedron';
 import HoverInfoDisplay from '@/components/HoverInfoDisplay';
 import '@/app/styles.css';
 
-const Home = () => {
+const Blog = () => {
   const [hoveredUrl, setHoveredUrl] = useState('');
 
   return (
@@ -16,10 +16,10 @@ const Home = () => {
         <div className="absolute top-20 left-1/2 -translate-x-1/2 pointer-events-none">
           <HoverInfoDisplay text={hoveredUrl} />
         </div>
-        <h1 className="title">"HOME"</h1>
+        <h1 className="title">"BLOG"</h1>
       </div>
     </div>
   );
 };
 
-export default Home;
+export default Blog;
