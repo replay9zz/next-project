@@ -19,7 +19,7 @@ const HoverInfoDisplay: React.FC<HoverInfoDisplayProps> = ({ text }) => {
             padding: '10px',
             borderRadius: '5px'
         }}>
-            "{text}"
+            &quot;{text}&quot;
         </div>
     );
 };

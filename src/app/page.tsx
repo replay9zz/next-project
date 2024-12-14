@@ -16,7 +16,7 @@ const Home = () => {
         <div className="absolute top-20 left-1/2 -translate-x-1/2 pointer-events-none">
           <HoverInfoDisplay text={hoveredUrl} />
         </div>
-        <h1 className="title">"HOME"</h1>
+        <h1 className="title">&quot;HOME&quot;</h1>
       </div>
     </div>
   );

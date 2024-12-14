@@ -19,21 +19,21 @@ const Link = () => {
         </div>
         <div className="navigation-layer">
           <h1 className="title">
-            "LINK"
+            &quot;LINK&quot;
           </h1>
           <div className="github-link">
             <a href="https://github.com/replay9zz" target="_blank" rel="noopener noreferrer">
-              "GitHub"
+              &quot;GitHub&quot;
             </a>             
           </div>
           <div className="instagram-link">
             <a href="https://www.instagram.com/hirokiokabe_o.o_/" target="_blank" rel="noopener noreferrer">
-              "Instagram"
+              &quot;Instagram&quot;
             </a>
           </div>
           <div className="hackthebox-academy-link">
             <a href="https://academy.hackthebox.com/dashboard" target="_blank" rel="noopener noreferrer">
-              "HTBAcademy"
+              &quot;HTBAcademy&quot;
             </a>
           </div>
         </div>
