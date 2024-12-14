@@ -2,9 +2,9 @@ import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-const RegularTetrahedron = ({ setHoveredUrl }) => {
-    const ref = useRef(null);
-    const groupRef = useRef(null);
+const RegularTetrahedron = ({ setHoveredUrl }: { setHoveredUrl: React.Dispatch<React.SetStateAction<string>> }) => {
+    const ref = useRef<HTMLDivElement>(null);
+    const groupRef = useRef<THREE.Group>(null);
 
     useEffect(() => {
         const currentRef = ref.current;
@@ -36,7 +36,11 @@ const RegularTetrahedron = ({ setHoveredUrl }) => {
         const urls = ["/", "/about", "/blog", "/link"];
         const labels = ["HOME", "ABOUT", "BLOG", "LINK"];
         const vertices = tetraGeometry.getAttribute('position');
-        const spheres = [];
+        interface SphereData {
+            URL: string;
+            label: string;
+        }
+        const spheres: THREE.Mesh<THREE.SphereGeometry, THREE.MeshBasicMaterial>[] = [];
         
         for (let i = 0; i < vertices.count; i++) {
             const vertex = new THREE.Vector3().fromBufferAttribute(vertices, i);
@@ -55,27 +59,40 @@ const RegularTetrahedron = ({ setHoveredUrl }) => {
         const raycaster = new THREE.Raycaster();
         const mouse = new THREE.Vector2();
 
-        const onMouseMove = (event) => {
+        interface MouseEventWithClient extends MouseEvent {
+            clientX: number;
+            clientY: number;
+        }
+
+        interface IntersectedObject extends THREE.Intersection {
+            object: THREE.Mesh & {
+            userData: {
+                label: string;
+            }
+            };
+        }
+
+        const onMouseMove = (event: MouseEventWithClient): void => {
             mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
             mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
             raycaster.setFromCamera(mouse, camera);
-            const intersects = raycaster.intersectObjects(spheres);
+            const intersects = raycaster.intersectObjects(spheres) as IntersectedObject[];
             
             if (intersects.length > 0) {
-                setHoveredUrl(intersects[0].object.userData.label);
+            setHoveredUrl(intersects[0].object.userData.label);
             } else {
-                setHoveredUrl('');
+            setHoveredUrl('');
             }
         };
 
-        const onMouseClick = (event) => {
+        const onMouseClick = (event: MouseEventWithClient): void => {
             mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
             mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
             raycaster.setFromCamera(mouse, camera);
-            const intersects = raycaster.intersectObjects(spheres);
+            const intersects = raycaster.intersectObjects(spheres) as IntersectedObject[];
             if (intersects.length > 0) {
-                const url = intersects[0].object.userData.URL;
-                url === "/" ? window.location.href = "/" : window.location.href = url;
+            const url = intersects[0].object.userData.URL;
+            url === "/" ? window.location.href = "/" : window.location.href = url;
             }
         };
 
