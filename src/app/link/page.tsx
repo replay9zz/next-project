@@ -21,17 +21,17 @@ const Link = () => {
           <h1 className="title">
             &quot;LINK&quot;
           </h1>
-          <div className="github-link">
+          <div className="link-github">
             <a href="https://github.com/replay9zz" target="_blank" rel="noopener noreferrer">
               &quot;GitHub&quot;
             </a>             
           </div>
-          <div className="instagram-link">
+          <div className="link-instagram">
             <a href="https://www.instagram.com/hirokiokabe_o.o_/" target="_blank" rel="noopener noreferrer">
               &quot;Instagram&quot;
             </a>
           </div>
-          <div className="hackthebox-academy-link">
+          <div className="link-hackthebox-academy">
             <a href="https://academy.hackthebox.com/dashboard" target="_blank" rel="noopener noreferrer">
               &quot;HTBAcademy&quot;
             </a>
