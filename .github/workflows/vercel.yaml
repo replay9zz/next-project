@@ -4,11 +4,16 @@ on:
     branches:
       - master
 
+# GitHub Tokenの権限をより具体的に設定
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
   issues: write
   deployments: write
+  statuses: write
+  checks: write
+  actions: write
+  discussions: write
 
 jobs:
   Deploy-Production:
@@ -35,21 +40,38 @@ jobs:
           working-directory: ./
           vercel-args: '--prod'
           
-      - name: Set Preview URL
+      # 新しい環境ファイル構文を使用
+      - name: Set deployment URL
         run: |
-          echo "PREVIEW_URL=${{ steps.deploy.outputs.preview-url }}" >> $GITHUB_ENV
+          echo "DEPLOYMENT_URL=${{ steps.deploy.outputs.preview-url }}" >> $GITHUB_ENV
           
-      - name: Comment PR
-        uses: thollander/actions-comment-pull-request@v2
-        if: github.event_name == 'pull_request'
+      # プッシュイベント用のコメント
+      - name: Create Deployment Status
+        if: success()
+        uses: actions/github-script@v6
         with:
-          message: |
-            ✨ Vercel Preview Deployment is ready!
-            Preview: ${{ env.PREVIEW_URL }}
-          comment_tag: deployment
-          
+          script: |
+            const { DEPLOYMENT_URL } = process.env;
+            await github.rest.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: context.sha,
+              state: 'success',
+              target_url: DEPLOYMENT_URL,
+              description: 'Deployment succeeded',
+              context: 'Vercel Deployment'
+            });
+            
       - name: Handle Errors
         if: failure()
-        run: |
-          echo "Deployment failed. Check the logs for more information."
-          exit 1
+        uses: actions/github-script@v6
+        with:
+          script: |
+            await github.rest.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: context.sha,
+              state: 'failure',
+              description: 'Deployment failed',
+              context: 'Vercel Deployment'
+            });
