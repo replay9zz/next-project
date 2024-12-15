@@ -26,7 +26,7 @@ const Link = () => {
               &quot;GitHub&quot;
             </a>             
           </div>
-          <div className="instagram-link">
+          <div className="instagram-1-link">
             <a href="https://www.instagram.com/hirokiokabe_o.o_/" target="_blank" rel="noopener noreferrer">
               &quot;Instagram&quot;
             </a>
