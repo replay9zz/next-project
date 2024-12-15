@@ -27,7 +27,7 @@ const Link = () => {
             </a>             
           </div>
           <div className="instagram-link">
-            <a href="https://www.instagram.com/hirokiokabe_o.o_/" target="_blank" rel="noopener noreferrer">
+            <a href="https://academy.hackthebox.com/dashboard" target="_blank" rel="noopener noreferrer">
               &quot;Instagram&quot;
             </a>
           </div>
