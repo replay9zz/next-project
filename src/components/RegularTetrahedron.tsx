@@ -36,10 +36,10 @@ const RegularTetrahedron = ({ setHoveredUrl }: { setHoveredUrl: React.Dispatch<R
         const urls = ["/", "/about", "/blog", "/link"];
         const labels = ["HOME", "ABOUT", "BLOG", "LINK"];
         const vertices = tetraGeometry.getAttribute('position');
-        interface SphereData {
-            URL: string;
-            label: string;
-        }
+        // interface SphereData {
+        //     URL: string;
+        //     label: string;
+        // }
         const spheres: THREE.Mesh<THREE.SphereGeometry, THREE.MeshBasicMaterial>[] = [];
         
         for (let i = 0; i < vertices.count; i++) {
@@ -91,8 +91,8 @@ const RegularTetrahedron = ({ setHoveredUrl }: { setHoveredUrl: React.Dispatch<R
             raycaster.setFromCamera(mouse, camera);
             const intersects = raycaster.intersectObjects(spheres) as IntersectedObject[];
             if (intersects.length > 0) {
-            const url = intersects[0].object.userData.URL;
-            url === "/" ? window.location.href = "/" : window.location.href = url;
+                const url = intersects[0].object.userData.URL;
+                window.location.href = url;
             }
         };
 
