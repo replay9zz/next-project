@@ -49,13 +49,13 @@
   pointer-events: none;
 }
 
-.instagram-link {
+.instagram-1-link {
   font-size: 100px;
   font-weight: bold;
   color: white;
   position: absolute;
   top: 30%;
-  right: -15%;
+  right: 5%;
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
@@ -66,7 +66,7 @@
   color: white;
   position: absolute;
   top: 80%;
-  left: 80%;
+  left: 30%;
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
