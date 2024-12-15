@@ -4,7 +4,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 const RegularTetrahedron = ({ setHoveredUrl }: { setHoveredUrl: React.Dispatch<React.SetStateAction<string>> }) => {
     const ref = useRef<HTMLDivElement>(null);
-    const groupRef = useRef<THREE.Group>(null);
+    const groupRef = useRef<THREE.Group | null>(null);
 
     useEffect(() => {
         const currentRef = ref.current;
