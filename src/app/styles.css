@@ -38,7 +38,7 @@
   pointer-events: none;
 }
 
-.link-github {
+.link-github-1 {
   font-size: 100px;
   font-weight: bold;
   color: white;
@@ -60,7 +60,7 @@
   pointer-events: none;
 }
 
-.link-hackthebox-academy {
+.link-hackthebox-academy-1 {
   font-size: 100px;
   font-weight: bold;
   color: white;
@@ -70,3 +70,4 @@
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
+

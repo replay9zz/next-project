@@ -14,14 +14,14 @@ const Link = () => {
     <div className="fixed inset-0 overflow-hidden">
       <div className="relative h-full w-full">
         <RegularTetrahedron setHoveredUrl={setHoveredUrl} />
-        <div className="absolute top-20 left-1/2 -translate-x-1/2">
+        <div className="absolute top-20 w-full text-center">
           <HoverInfoDisplay text={hoveredUrl} />
         </div>
         <div className="navigation-layer">
           <h1 className="title">
             &quot;LINK&quot;
           </h1>
-          <div className="link-github">
+          <div className="link-github-1">
             <a href="https://github.com/replay9zz" target="_blank" rel="noopener noreferrer">
               &quot;GitHub&quot;
             </a>             
@@ -31,7 +31,7 @@ const Link = () => {
               &quot;Instagram&quot;
             </a>
           </div>
-          <div className="link-hackthebox-academy">
+          <div className="link-hackthebox-academy-1">
             <a href="https://academy.hackthebox.com/dashboard" target="_blank" rel="noopener noreferrer">
               &quot;HTBAcademy&quot;
             </a>

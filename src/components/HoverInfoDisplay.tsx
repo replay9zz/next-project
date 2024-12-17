@@ -1,4 +1,5 @@
-// components/HoverInfoDisplay.tsx
+// src/components/HoverInfoDisplay.tsx
+
 import React from 'react';
 
 interface HoverInfoDisplayProps {
