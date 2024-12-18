@@ -10,8 +10,10 @@ const About = () => {
 
   return (
     <div className="relative min-h-screen">
-      <div className="relative h-screen w-full">
-        <RegularTetrahedron setHoveredUrl={setHoveredUrl} />
+      <div className="pointer-events-none relative h-screen w-full">
+        <div className="pointer-events-auto">
+          <RegularTetrahedron setHoveredUrl={setHoveredUrl} />
+        </div>
         <div className="absolute top-20 w-full text-center">
           <HoverInfoDisplay text={hoveredUrl} />
         </div>
@@ -22,8 +24,14 @@ const About = () => {
       
       <div className="min-h-screen bg-black p-8">
         <div className="mx-auto max-w-4xl">
-          <h2 className="mb-6 text-3xl font-bold">About Us</h2>
-          <div className="space-y-6">
+          <h2 className="mb-6 text-3xl font-bold text-white">
+            Python 100%<br></br>
+            ==================================================&gt;<br></br>
+            JavaScript 80%<br></br>
+            ========================================&gt;<br></br>
+          </h2>
+
+          <div className="space-y-6 text-white">
             <p>Your content goes here...</p>
             <p>More content...</p>
           </div>
