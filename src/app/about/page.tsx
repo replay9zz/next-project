@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import RegularTetrahedron from '@/components/RegularTetrahedron';
 import HoverInfoDisplay from '@/components/HoverInfoDisplay';
+import SkillsSection from '@/components/SkillsSection';
 import '@/app/styles.css';
 
 const About = () => {
@@ -24,13 +25,9 @@ const About = () => {
       
       <div className="min-h-screen bg-black p-8">
         <div className="mx-auto max-w-4xl">
-          <h2 className="mb-6 text-3xl font-bold text-white">
-            Python 100%<br></br>
-            ==================================================&gt;<br></br>
-            JavaScript 80%<br></br>
-            ========================================&gt;<br></br>
-          </h2>
-
+          <div className="relative min-h-screen">
+            <SkillsSection />
+          </div>
           <div className="space-y-6 text-white">
             <p>Your content goes here...</p>
             <p>More content...</p>
