@@ -26,11 +26,11 @@ const Link = () => {
               &quot;GitHub&quot;
             </a>             
           </div>
-          <div className="link-instagram-1">
+          {/* <div className="link-instagram-1">
             <a href="https://www.instagram.com/hirokiokabe_o.o_/" target="_blank" rel="noopener noreferrer">
               &quot;Instagram&quot;
             </a>
-          </div>
+          </div> */}
           <div className="link-hackthebox-academy-1">
             <a href="https://academy.hackthebox.com/dashboard" target="_blank" rel="noopener noreferrer">
               &quot;HTBAcademy&quot;
