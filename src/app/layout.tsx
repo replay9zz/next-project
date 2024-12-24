@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Vertex",
+  title: "Hiroki Okabe",
   description: "Click vertices to navigate",
 };
 
