@@ -48,7 +48,6 @@ const About = () => {
             <SkillsSection />
           </div>
           <div className="space-y-6 text-white">
-            <p>Your content goes here...</p>
             <p>More content...</p>
           </div>
         </div>

@@ -27,30 +27,53 @@ const Link = () => {
     }, []);
 
   return (
-    <div className="fixed inset-0 overflow-hidden">
+    <div className="relative min-h-screen">
       <div className="relative h-full w-full">
-        <RegularTetrahedron setHoveredUrl={setHoveredUrl} />
-        <div className="absolute top-20 w-full text-center">
-          <HoverInfoDisplay text={hoveredUrl} />
+
+        <div className="fixed inset-0">
+          <RegularTetrahedron setHoveredUrl={setHoveredUrl} />  
+          <div className="absolute top-20 w-full text-center">
+            <HoverInfoDisplay text={hoveredUrl} />
+          </div>
+          <h1 className="title">&quot;LINK&quot;</h1>
         </div>
-        <div className="navigation-layer">
-          <h1 className="title">
-            &quot;LINK&quot;
-          </h1>
-          <div className="link-github-1">
-            <a href="https://github.com/replay9zz" target="_blank" rel="noopener noreferrer">
-              &quot;GitHub&quot;
-            </a>             
-          </div>
-          <div className="link-tryhackme-1">
-            <a href="https://tryhackme.com/r/p/replays" target="_blank" rel="noopener noreferrer">
-              &quot;TryHackMe&quot;
-            </a>
-          </div>
-          <div className="link-hackthebox-academy-1">
-            <a href="https://academy.hackthebox.com/dashboard" target="_blank" rel="noopener noreferrer">
-              &quot;HTBAcademy&quot;
-            </a>
+        <div className="relative h-full overflow-y-auto">
+          <div className="h-[200vh] pt-20">
+            <div className="link-github-1">
+              <a href="https://github.com/replay9zz" target="_blank" rel="noopener noreferrer">
+                &quot;GitHub&quot;
+              </a>             
+            </div>
+            <div className="link-tryhackme-1">
+              <a href="https://tryhackme.com/r/p/replays" target="_blank" rel="noopener noreferrer">
+                &quot;TryHackMe&quot;
+              </a>
+            </div>
+            <div className="link-hackthebox-academy-1">
+              <a href="https://academy.hackthebox.com/dashboard" target="_blank" rel="noopener noreferrer">
+                &quot;HTBAcademy&quot;
+              </a>
+            </div>
+            <div className="link-newsite-1">
+              <a href="https://your-new-link.com" target="_blank" rel="noopener noreferrer">
+                &quot;NewSite&quot;
+              </a>
+            </div>
+            <div className="link-newsite-2">
+              <a href="https://your-new-link.com" target="_blank" rel="noopener noreferrer">
+                &quot;NewSite&quot;
+              </a>
+            </div>
+            <div className="link-newsite-3">
+              <a href="https://your-new-link.com" target="_blank" rel="noopener noreferrer">
+                &quot;NewSite&quot;
+              </a>
+            </div>
+            <div className="link-newsite-4">
+              <a href="https://your-new-link.com" target="_blank" rel="noopener noreferrer">
+                &quot;NewSite&quot;
+              </a>
+            </div>
           </div>
         </div>
       </div>

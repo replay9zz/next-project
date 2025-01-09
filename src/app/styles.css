@@ -1,13 +1,13 @@
 .link-text {
-    fill: transparent; /* 初期状態は透明 */
+    fill: transparent;
     stroke: transparent;
     stroke-width: 20;
     cursor: pointer;
-    transition: fill 0.5s ease; /* 透明から色が変わるアニメーション */
+    transition: fill 0.5s ease;
 }
   
 .link-text:hover {
-    fill: currentColor; /* ホバー時にはテキストの色を適用 */
+    fill: currentColor;
 }
 
 .url-display p {
@@ -43,7 +43,7 @@
   font-weight: bold;
   color: white;
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 17%;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -54,8 +54,8 @@
   font-weight: bold;
   color: white;
   position: absolute;
-  top: 30%;
-  left: 75%;
+  top: 15%;
+  left: 83%;
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
@@ -65,8 +65,52 @@
   font-weight: bold;
   color: white;
   position: absolute;
-  top: 80%;
-  left: 30%;
+  top: 25%;
+  left: 17%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.link-newsite-1 {
+  font-size: 100px;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  top: 35%;
+  left: 83%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.link-newsite-2 {
+  font-size: 100px;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  top: 45%;
+  left:17%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.link-newsite-3 {
+  font-size: 100px;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  top: 55%;
+  left:83%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.link-newsite-4 {
+  font-size: 100px;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  top: 65%;
+  left:17%;
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
