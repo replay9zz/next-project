@@ -5,13 +5,28 @@ import React, { useState, useEffect } from 'react';
 import RegularTetrahedron from '@/components/RegularTetrahedron';
 import HoverInfoDisplay from '@/components/HoverInfoDisplay';
 import '@/app/styles.css';
+import Lenis from '@studio-freight/lenis';
 
 const Home = () => {
  const [hoveredUrl, setHoveredUrl] = useState('');
  const [isVisible, setIsVisible] = useState(false);
 
  useEffect(() => {
-   // /aboutなどからの遷移かチェック
+   const lenis = new Lenis();
+   
+   function raf(time: number) {
+     lenis.raf(time);
+     requestAnimationFrame(raf);
+   }
+
+   requestAnimationFrame(raf);
+
+   return () => {
+     lenis.destroy();
+   };
+ }, []);
+
+ useEffect(() => {
    const referrer = document.referrer;
    const isInternalNavigation = referrer.includes(window.location.origin);
 

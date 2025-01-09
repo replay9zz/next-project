@@ -1,13 +1,32 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import RegularTetrahedron from '@/components/RegularTetrahedron';
 import HoverInfoDisplay from '@/components/HoverInfoDisplay';
 import SkillsSection from '@/components/SkillsSection';
+import Lenis from '@studio-freight/lenis'
 import '@/app/styles.css';
+
+
+
 
 const About = () => {
   const [hoveredUrl, setHoveredUrl] = useState('');
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
 
   return (
     <div className="relative min-h-screen">
