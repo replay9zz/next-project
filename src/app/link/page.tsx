@@ -41,17 +41,17 @@ const Link = () => {
           <div className="h-[200vh] pt-20">
             <div className="link-github-1">
               <a href="https://github.com/replay9zz" target="_blank" rel="noopener noreferrer">
-                &quot;GitHub&quot;
+                &quot;GITHUB&quot;
               </a>             
             </div>
             <div className="link-tryhackme-1">
               <a href="https://tryhackme.com/r/p/replays" target="_blank" rel="noopener noreferrer">
-                &quot;TryHackMe&quot;
+                &quot;THM&quot;
               </a>
             </div>
             <div className="link-hackthebox-academy-1">
               <a href="https://academy.hackthebox.com/dashboard" target="_blank" rel="noopener noreferrer">
-                &quot;HTBAcademy&quot;
+                &quot;HTBA&quot;
               </a>
             </div>
             <div className="link-newsite-1">
