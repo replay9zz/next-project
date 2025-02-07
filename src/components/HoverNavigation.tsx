@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import HoverInfoDisplay from "./HoverInfoDisplay";
 
+// Navigation items configuration
 const navItems = [
   { path: "/", label: '"HOME"' },
   { path: "/about", label: '"ABOUT"' },
@@ -19,26 +20,24 @@ export default function HoverNavigation() {
 
   return (
     <>
-      {/* Left trigger */}
+      {/* Triggers */}
       <div 
         className="fixed left-0 top-0 h-full w-20 z-40 group"
         onMouseEnter={() => setIsOpen(true)}
       />
-
-      {/* Right trigger */}
       <div 
         className="fixed right-0 top-0 h-full w-20 z-40 group"
         onMouseEnter={() => setIsOpen(true)}
       />
 
-      {/* Navigation */}
+      {/* Navigation Menu */}
       <div 
-        className={`fixed inset-0 z-50 bg-black/70 backdrop-blur-md transition-all duration-300 ${
+        className={`fixed inset-0 z-50 bg-black/70 backdrop-blur-md transition-all duration-300 flex items-center justify-center ${
           isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
         onMouseLeave={() => setIsOpen(false)}
       >
-        {/* Close button */}
+        {/* Close Button */}
         <button
           onClick={() => setIsOpen(false)}
           className="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors"
@@ -59,18 +58,20 @@ export default function HoverNavigation() {
           </svg>
         </button>
 
-        <div className="h-full flex items-center justify-center">
-          <ul className="space-y-16">
+        {/* Navigation Links */}
+        <nav className="w-full max-w-md mx-auto">
+          <ul className="flex flex-col items-center justify-center space-y-16">
             {navItems.map((item) => (
               <li 
                 key={item.path}
+                className="w-full text-center"
                 onMouseEnter={() => setHoveredItem(item.label)}
                 onMouseLeave={() => setHoveredItem(null)}
               >
                 <Link
                   href={item.path}
                   onClick={() => setIsOpen(false)}
-                  className={`block text-4xl font-mono tracking-wide transition-colors text-center ${
+                  className={`inline-block text-4xl font-mono tracking-wide transition-colors ${
                     pathname === item.path
                       ? "text-white"
                       : "text-gray-400 hover:text-white"
@@ -81,9 +82,10 @@ export default function HoverNavigation() {
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
       </div>
 
+      {/* Global styles */}
       <style jsx global>{`
         .content-wrapper {
           opacity: 1;
@@ -93,6 +95,7 @@ export default function HoverNavigation() {
           opacity: 0.3;
         }
       `}</style>
+
       <HoverInfoDisplay text={hoveredItem ? hoveredItem.replace(/"/g, '') : ''} />
     </>
   );
