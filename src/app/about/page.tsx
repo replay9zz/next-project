@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react';
 import RegularTetrahedron from '@/components/RegularTetrahedron';
 import HoverInfoDisplay from '@/components/HoverInfoDisplay';
 import SkillsSection from '@/components/SkillsSection';
+import ProfileSection from '@/components/ProfileSection';
 import Lenis from '@studio-freight/lenis'
 import '@/app/styles.css';
-
 
 
 
@@ -44,6 +44,7 @@ const About = () => {
       
       <div className="min-h-screen bg-black p-8">
         <div className="mx-auto max-w-4xl">
+          <ProfileSection />
           <div className="relative min-h-screen">
             <SkillsSection />
           </div>
