@@ -70,7 +70,7 @@ export default function HoverNavigation() {
                 <Link
                   href={item.path}
                   onClick={() => setIsOpen(false)}
-                  className={`block text-4xl font-mono tracking-wide transition-colors ${
+                  className={`block text-4xl font-mono tracking-wide transition-colors text-center ${
                     pathname === item.path
                       ? "text-white"
                       : "text-gray-400 hover:text-white"
