@@ -6,9 +6,9 @@ const ProfileSection: React.FC = () => {
       <h2 className="text-4xl font-bold mb-12 text-center">Profile</h2>
       <div className="mb-8">
         <img
-          src="/profile.jpg"
+          src="/profile.png"
           alt="Profile"
-          className="w-48 h-48 rounded-full object-cover"
+          className="w-48 h-48 object-cover"
         />
       </div>
       <p className="max-w-2xl text-center text-lg mb-8">

@@ -17,6 +17,9 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Hiroki Okabe",
   description: "Click vertices to navigate",
+  icons: {
+    icon: '/profile.png',
+  },
 };
 
 export default function RootLayout({
