@@ -9,12 +9,13 @@ export async function generateStaticParams() {
   }));
 }
 
-interface PageProps {
-  params: { slug: string };
-}
-
-export default async function BlogPost({ params }: PageProps) {
-  const post = await getPostData(params.slug);
+export default async function BlogPost({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params;
+  const post = await getPostData(slug);
   const contentHtml = await getPostHtml(post.content || '');
 
   return (
