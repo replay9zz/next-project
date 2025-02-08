@@ -1,10 +1,10 @@
-// src/components/RegularTetrahedron.tsx
+'use client';
 
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-const RegularTetrahedron = ({ setHoveredUrl }: { setHoveredUrl: React.Dispatch<React.SetStateAction<string>> }) => {
+const RegularTetrahedron = ({ setHoveredUrl }: { setHoveredUrl?: React.Dispatch<React.SetStateAction<string>> }) => {
     const ref = useRef<HTMLDivElement>(null);
     const groupRef = useRef<THREE.Group | null>(null);
 
@@ -38,10 +38,6 @@ const RegularTetrahedron = ({ setHoveredUrl }: { setHoveredUrl: React.Dispatch<R
         const urls = ["/", "/about", "/blog", "/link"];
         const labels = ["HOME", "ABOUT", "BLOG", "LINK"];
         const vertices = tetraGeometry.getAttribute('position');
-        // interface SphereData {
-        //     URL: string;
-        //     label: string;
-        // }
         const spheres: THREE.Mesh<THREE.SphereGeometry, THREE.MeshBasicMaterial>[] = [];
         
         for (let i = 0; i < vertices.count; i++) {
@@ -80,10 +76,10 @@ const RegularTetrahedron = ({ setHoveredUrl }: { setHoveredUrl: React.Dispatch<R
             raycaster.setFromCamera(mouse, camera);
             const intersects = raycaster.intersectObjects(spheres) as IntersectedObject[];
             
-            if (intersects.length > 0) {
-            setHoveredUrl(intersects[0].object.userData.label);
-            } else {
-            setHoveredUrl('');
+            if (intersects.length > 0 && setHoveredUrl) {
+                setHoveredUrl(intersects[0].object.userData.label);
+            } else if (setHoveredUrl) {
+                setHoveredUrl('');
             }
         };
 
